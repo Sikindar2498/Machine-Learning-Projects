@@ -1,5 +1,5 @@
 # PUBG Game Winner Prediction
-This Machine learning Model is done by Chundi Nanda Gopal reddy for insitutional purposes. The model can still be improved and updated in future.
+This Machine learning Model is done by Pappala Sikindar Datha Ganesh for insitutional purposes. The model can still be improved and updated in future.
 This repository contains code and resources to predict the outcome of PUBG games based on various player and game parameters using machine learning.
 
 # Dataset Information
