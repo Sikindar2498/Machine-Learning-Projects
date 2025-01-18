@@ -23,12 +23,44 @@ Test: Dataset to be tested against after we trained a model.
 
 Prefetching solves the inefficiencies from naive approach as it aims to overlap the preprocessing and model execution of the training step. In other words, when the model is executing training step n, the input pipeline will be reading the data for step n+1.
 
-You can use prefetch transformation to overlap the work done by pipeline (producer) and the model (consumer), interleave transformation to parallelise data reading, map transformation to parallelise data transformation, cache transformation to cache data in memory or local storage and also vectorising your map transformations with the batch transformation.
 
 Data augmentation in data analysis are techniques used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data. It acts as a regularizer and helps reduce overfitting when training a machine learning model.
 
-## Result :
-#### Model accuracy is 90% which is pretty good score.
+FINAL CONCLUSION *
+
+CNN (Baseline Model) Before Hyperparameter Tuning: Validation Loss: 1.4186 AND Validation Accuracy: 78.26%
+After Hyperparameter Tuning: Validation Loss: 0.8586 AND Validation Accuracy: 65.22%
+
+OBSERVATION : After hyperparameter tuning, the loss improved (lowered), but the accuracy dropped significantly. This suggests the model might have overfit or found a suboptimal point in the loss landscape.
+
+2.VGG16 (Pretrained Model)
+
+Validation Loss: 1.0361
+
+Validation Accuracy: 82.61%
+
+OBSERVATION : VGG16 outperformed the CNN model in terms of accuracy while maintaining a relatively lower loss. It seems to generalize well for my dataset. This is expected because VGG16 benefits from pretrained weights and a deeper architecture designed for robust feature extraction.
+
+3.EfficientNet
+
+Validation Loss: 1.0985
+
+Validation Accuracy: 34.78%
+
+OBSERVATION :
+
+The low accuracy suggests that EfficientNet is struggling to learn meaningful patterns on my dataset. or a mismatch between the dataset size and EfficientNet's requirements. EfficientNet is powerful but often requires more data and careful fine-tuning.
+
+RECOMMENDATION :
+Based on these results:
+
+VGG16 is the most recommendable model because it has the highest validation accuracy (82.61%) and a reasonable loss. It leverages the strength of transfer learning effectively.
+
+CNN (Original) could also be considered if I want a simpler model, though it performs slightly worse than VGG16.
+
+EfficientNet might not be suitable unless If i can improve its performance with additional tuning or a larger dataset.
+
+
 
 
 
